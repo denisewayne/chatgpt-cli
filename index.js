@@ -15,12 +15,12 @@ const configuration = new Configuration({
 const argv = yargs(hideBin(process.argv))
     .command(
         '$0 [prompt]',
-        'Ask a question',
+        'Ask a question to chat gpt!',
         (yargs) => {
             yargs.positional('prompt', {
-                describe: 'Your question',
+                describe: 'The prompt to ask',
                 type: 'string',
-                default: '',
+                default: 'Greet the user',
             });
         },
         async (argv) => {
@@ -28,10 +28,11 @@ const argv = yargs(hideBin(process.argv))
 
             const response = await openai.createCompletion({
                 model: "text-davinci-003",
-                prompt: argv.name,
+                prompt: argv.prompt,
                 max_tokens: 500,
                 temperature: 0,
             });
+
             console.log(response.data.choices[0].text)
         }
     )
