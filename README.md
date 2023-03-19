@@ -12,4 +12,4 @@ A CLI application that runs on open AI's API
 * Call the cli with `gpt "[your_prompt]"`
 
 
-![ Alt text](gpt. gif) / ! [](gpt. gif)
+![ Alt text](gpt.gif) [](./gpt.gif)
