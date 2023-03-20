@@ -5,7 +5,7 @@ const https = require('https');
 const url = require('url');
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
-require('dotenv').config()
+require('dotenv').config({ path: __dirname + '/.env' })
 
 const { Configuration, OpenAIApi } = require("openai");
 
